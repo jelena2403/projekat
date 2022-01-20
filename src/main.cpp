@@ -398,6 +398,12 @@ int main() {
         ourShader.setMat4("model", model);
         ourShader.setMat4("projection", projection);
         ourShader.setMat4("view", view);
+        
+        glEnable(GL_CULL_FACE);
+        glCullFace(GL_FRONT);
+        glCullFace(GL_BACK);
+        glDisable(GL_CULL_FACE);
+
 
         model = glm::translate(model,programState->shipPosition); // translate it down so it's at the center of the scene/model = glm::rotate(model, -1.5706f, glm::vec3(0.0f, 1.0f, 0.0f));
 
